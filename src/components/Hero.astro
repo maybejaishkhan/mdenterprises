@@ -1,0 +1,29 @@
+---
+import Button from './Button.astro';
+---
+
+<section class="relative overflow-hidden py-20 text-brand-white sm:py-24 lg:py-28">
+	<img
+		src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=2200&q=80"
+		alt="Engineering team reviewing large development map plans"
+		class="absolute inset-0 h-full w-full object-cover"
+		loading="eager"
+	/>
+	<div class="absolute inset-0 bg-black/90"></div>
+	<div class="relative mx-auto grid max-w-container items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+		<div>
+			<p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand-gold">Trusted Engineering Partner</p>
+			<h1 class="mt-4 text-3xl font-bold leading-tight tracking-[0.02em] sm:text-4xl lg:text-5xl">
+				Precision map design and layout planning for modern infrastructure.
+			</h1>
+			<p class="mt-6 max-w-xl text-base leading-7 text-brand-light sm:text-[18px]">
+				MD Enterprises helps developers, institutions, and civic authorities transform land into structured, compliant, and future-ready developments.
+			</p>
+			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+				<Button href="/contact" className="w-full sm:w-auto">Request Consultation</Button>
+				<Button href="/projects" variant="secondary" className="w-full sm:w-auto">View Projects</Button>
+			</div>
+		</div>
+		<div class="hidden lg:block"></div>
+	</div>
+</section>

@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+---
+
+<Layout
+	title="About MD Enterprises | Engineering Expertise and Planning Excellence"
+	description="Learn about MD Enterprises, our engineering approach, and how we deliver reliable map design and planning solutions."
+	path="/about"
+>
+	<PageHero
+		title="About MD Enterprises"
+		description="We are a specialist engineering firm focused on practical planning intelligence, regulatory alignment, and sustainable development outcomes."
+	/>
+	<section class="py-16 sm:py-20">
+		<div class="mx-auto grid max-w-container gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+			<div>
+				<h2 class="text-3xl font-bold tracking-[0.02em] text-brand-white">Our Mission</h2>
+				<p class="mt-5 text-base leading-7 text-brand-light">
+					To empower developers and institutions with engineering-backed planning that minimizes risk and enables long-term infrastructure performance.
+				</p>
+				<p class="mt-4 text-base leading-7 text-brand-light">
+					Our team combines site analysis, policy awareness, and technical precision to ensure every project begins with a viable and scalable foundation.
+				</p>
+			</div>
+			<div class="border border-brand-slate bg-brand-slate/30 p-8 shadow-lg shadow-black/20">
+				<h3 class="text-xl font-semibold text-brand-white">What We Value</h3>
+				<ul class="mt-6 space-y-4 text-sm leading-6 text-brand-light">
+					<li class="bg-brand-charcoal p-4">Accountability in every recommendation and deliverable.</li>
+					<li class="bg-brand-charcoal p-4">Clarity in communication with all project stakeholders.</li>
+					<li class="bg-brand-charcoal p-4">Engineering rigor that supports safe, compliant outcomes.</li>
+					<li class="bg-brand-charcoal p-4">Adaptive planning that reflects future growth and operations.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<CtaBanner />
+</Layout>

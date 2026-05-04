@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+---
+
+<Layout
+	title="Services | MD Enterprises"
+	description="Explore MD Enterprises services in map designing, layout planning, and engineering consultancy."
+	path="/services"
+>
+	<PageHero
+		title="Engineering Services"
+		description="From early feasibility to design strategy, our service portfolio supports efficient and code-compliant project development."
+	/>
+	<ServicesGrid />
+	<section class="pb-16 sm:pb-20">
+		<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+			<div class="grid gap-6 md:grid-cols-3">
+				<article class="border border-brand-slate bg-brand-slate/30 p-6 shadow-lg shadow-black/20">
+					<h3 class="text-lg font-semibold text-brand-white">Pre-Development Advisory</h3>
+					<p class="mt-3 text-sm leading-6 text-brand-light">Site due diligence, potential constraints mapping, and zoning compatibility reviews.</p>
+				</article>
+				<article class="border border-brand-slate bg-brand-slate/30 p-6 shadow-lg shadow-black/20">
+					<h3 class="text-lg font-semibold text-brand-white">Approval Documentation Support</h3>
+					<p class="mt-3 text-sm leading-6 text-brand-light">Technical plan documentation aligned with local authority requirements and revisions.</p>
+				</article>
+				<article class="border border-brand-slate bg-brand-slate/30 p-6 shadow-lg shadow-black/20">
+					<h3 class="text-lg font-semibold text-brand-white">Execution-Phase Guidance</h3>
+					<p class="mt-3 text-sm leading-6 text-brand-light">On-ground coordination support for plan conformance and engineering issue resolution.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+	<CtaBanner />
+</Layout>

@@ -1,0 +1,74 @@
+---
+import Button from './Button.astro';
+
+const navLinks = [
+	{ href: '/', label: 'Home' },
+	{ href: '/about', label: 'About' },
+	{ href: '/services', label: 'Services' },
+	{ href: '/projects', label: 'Projects' },
+	{ href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-brand-slate bg-brand-charcoal/95 backdrop-blur">
+	<div class="mx-auto max-w-container px-4 py-4 sm:px-6 lg:px-8">
+		<div class="flex w-full items-center justify-between gap-3 sm:gap-4">
+			<a href="/" class="text-lg font-bold tracking-[0.03em] text-brand-white sm:text-xl">MD <span class="text-brand-gold">Enterprises</span></a>
+
+			<nav aria-label="Primary navigation" class="hidden md:block">
+				<ul class="flex items-center gap-2 lg:gap-4">
+					{
+						navLinks.map((link) => (
+							<li>
+								<a href={link.href} class="px-3 py-2 text-sm font-semibold uppercase tracking-[0.08em] text-brand-light transition hover:bg-brand-slate hover:text-brand-gold">
+									{link.label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+
+			<div class="flex items-center gap-2 sm:gap-3">
+				<Button href="/contact" className="px-3 py-2 text-xs sm:px-4 sm:py-2 sm:text-[15px]">Get a Quote</Button>
+				<button
+					id="menu-toggle"
+					type="button"
+					class="inline-flex h-10 w-10 items-center justify-center border border-brand-slate text-brand-white transition hover:bg-brand-slate md:hidden"
+					aria-expanded="false"
+					aria-controls="mobile-menu"
+					aria-label="Toggle navigation menu"
+				>
+					<span class="text-xl leading-none">≡</span>
+				</button>
+			</div>
+		</div>
+
+		<nav id="mobile-menu" aria-label="Mobile navigation" class="hidden border-t border-brand-slate pt-3 md:hidden">
+			<ul class="flex flex-col gap-1">
+				{
+					navLinks.map((link) => (
+						<li>
+							<a href={link.href} class="block px-3 py-2 text-sm font-semibold uppercase tracking-[0.08em] text-brand-light transition hover:bg-brand-slate hover:text-brand-gold">
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<script>
+	const toggleButton = document.getElementById('menu-toggle');
+	const mobileMenu = document.getElementById('mobile-menu');
+
+	if (toggleButton && mobileMenu) {
+		toggleButton.addEventListener('click', () => {
+			const expanded = toggleButton.getAttribute('aria-expanded') === 'true';
+			toggleButton.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+			mobileMenu.classList.toggle('hidden');
+		});
+	}
+</script>

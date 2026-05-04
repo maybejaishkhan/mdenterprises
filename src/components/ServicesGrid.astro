@@ -1,0 +1,47 @@
+---
+const services = [
+	{
+		title: 'Map Designing',
+		description:
+			'High-precision topographic and utility-aligned mapping to support zoning, approvals, and long-term development planning.',
+		image:
+			'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=80',
+	},
+	{
+		title: 'Layout Planning',
+		description:
+			'Strategic land use planning that optimizes circulation, open space, infrastructure integration, and phased expansion.',
+		image:
+			'https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=1000&q=80',
+	},
+	{
+		title: 'Engineering Consultancy',
+		description:
+			'Feasibility studies, structural guidance, compliance reviews, and execution frameworks for public and private projects.',
+		image:
+			'https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=1000&q=80',
+	},
+];
+---
+
+<section class="py-16 sm:py-20">
+	<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+		<h2 class="text-3xl font-bold tracking-[0.02em] text-brand-white">Core Services</h2>
+		<p class="mt-4 max-w-2xl text-base text-brand-light">
+			Our service model is structured to support project stakeholders from early planning decisions through execution-level engineering strategy.
+		</p>
+		<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{
+				services.map((service) => (
+					<article class="overflow-hidden border border-brand-slate bg-brand-slate/40 shadow-lg shadow-black/20 transition duration-300 hover:border-brand-gold">
+						<img src={service.image} alt={`${service.title} professional service visual`} class="h-52 w-full object-cover" loading="lazy" />
+						<div class="p-6">
+							<h3 class="text-xl font-semibold text-brand-white">{service.title}</h3>
+							<p class="mt-3 text-sm leading-6 text-brand-light">{service.description}</p>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>

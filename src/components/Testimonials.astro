@@ -1,0 +1,41 @@
+---
+const testimonials = [
+	{
+		name: 'Rohit Mehta',
+		role: 'Director, Skyline Habitat',
+		quote:
+			'MD Enterprises provided an exceptionally clear layout framework that accelerated our approvals and reduced avoidable redesign cycles.',
+	},
+	{
+		name: 'Neha Kulkarni',
+		role: 'Project Lead, Civic Growth Council',
+		quote:
+			'Their engineering consultancy was practical and data-driven. We were able to make faster infrastructure decisions with confidence.',
+	},
+	{
+		name: 'Vikram Desai',
+		role: 'Managing Partner, Axis Infra Developers',
+		quote:
+			'From map design to execution advisory, the team was reliable, responsive, and technically thorough at every stage.',
+	},
+];
+---
+
+<section class="py-16 sm:py-20">
+	<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+		<h2 class="text-3xl font-bold tracking-[0.02em] text-brand-white">Client Testimonials</h2>
+		<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{
+				testimonials.map((item) => (
+					<figure class="border border-brand-slate bg-brand-slate/30 p-6 shadow shadow-black/20">
+						<blockquote class="text-sm leading-6 text-brand-light">"{item.quote}"</blockquote>
+						<figcaption class="mt-4">
+							<p class="text-sm font-semibold text-brand-white">{item.name}</p>
+							<p class="text-xs text-brand-gold">{item.role}</p>
+						</figcaption>
+					</figure>
+				))
+			}
+		</div>
+	</div>
+</section>

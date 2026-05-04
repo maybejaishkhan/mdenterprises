@@ -1,0 +1,44 @@
+---
+const projects = [
+	{
+		name: 'Greenfield Smart Township',
+		summary: '300-acre integrated township layout with phased infrastructure strategy.',
+		image:
+			'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80',
+	},
+	{
+		name: 'Riverside Logistics Hub',
+		summary: 'Industrial corridor mapping and transport-optimized site planning.',
+		image:
+			'https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1000&q=80',
+	},
+	{
+		name: 'Cityview Mixed-Use Block',
+		summary: 'Urban redevelopment layout balancing residential and retail utility.',
+		image:
+			'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1000&q=80',
+	},
+];
+---
+
+<section class="py-16 sm:py-20">
+	<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+		<h2 class="text-3xl font-bold tracking-[0.02em] text-brand-white">Featured Projects</h2>
+		<p class="mt-4 max-w-2xl text-base text-brand-light">
+			Every project reflects our commitment to practical design standards, technical rigor, and long-term site functionality.
+		</p>
+		<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{
+				projects.map((project) => (
+					<article class="overflow-hidden border border-brand-slate bg-brand-slate/40 shadow-lg shadow-black/20 transition duration-300 hover:border-brand-gold">
+						<img src={project.image} alt={`${project.name} development project`} class="h-56 w-full object-cover" loading="lazy" />
+						<div class="p-6">
+							<h3 class="text-xl font-semibold text-brand-white">{project.name}</h3>
+							<p class="mt-2 text-sm leading-6 text-brand-light">{project.summary}</p>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>

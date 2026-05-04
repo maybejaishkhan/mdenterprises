@@ -1,0 +1,28 @@
+---
+const highlights = [
+	'Regulatory-first planning approach with strong approval track record',
+	'Integrated teams for surveying, design validation, and civil consulting',
+	'Transparent timelines with milestone-based communication',
+	'Scalable solutions for commercial, residential, and institutional sites',
+];
+---
+
+<section class="py-16 sm:py-20">
+	<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+		<div class="border border-brand-slate bg-brand-slate/30 p-8 sm:p-10">
+			<h2 class="text-3xl font-bold tracking-[0.02em] text-brand-white">Why Choose MD Enterprises</h2>
+			<p class="mt-4 max-w-2xl text-base text-brand-light">
+				Clients partner with us for dependable technical judgment, compliance clarity, and disciplined execution support.
+			</p>
+			<ul class="mt-8 grid gap-4 sm:grid-cols-2">
+				{
+					highlights.map((item) => (
+						<li class="border border-brand-slate bg-brand-charcoal p-5 text-sm font-medium text-brand-light shadow shadow-black/20">
+							{item}
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+</section>

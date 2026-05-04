@@ -1,0 +1,18 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	image?: string;
+}
+
+const { title, description, image = 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=2200&q=80' } = Astro.props;
+---
+
+<section class="relative overflow-hidden py-14 text-brand-white sm:py-20">
+	<img src={image} alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+	<div class="absolute inset-0 bg-black/70"></div>
+	<div class="relative mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+		<h1 class="text-3xl font-bold tracking-[0.02em] sm:text-4xl lg:text-5xl">{title}</h1>
+		<p class="mt-4 max-w-3xl text-base leading-7 text-brand-light">{description}</p>
+	</div>
+</section>
