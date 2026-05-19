@@ -1,17 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 @import "tailwindcss";
 
 @theme {
-	--font-sans: "IBM Plex Sans", system-ui, sans-serif;
-	--color-brand-charcoal: #000000;
-	--color-brand-slate: #3a3d45;
-	--color-brand-gold: #c9a56a;
-	--color-brand-deepGold: #a9864d;
-	--color-brand-light: #d9d9d9;
-	--color-brand-white: #ffffff;
+	--font-sans: "DM Sans", system-ui, sans-serif;
+	--font-heading: "DM Sans", system-ui, sans-serif;
+	--font-accent: "DM Serif Display", Georgia, serif;
+
+	--color-brand-bg: #0b0d12;
+	--color-brand-elevated: #12151c;
+	--color-brand-surface: #171a22;
+	--color-brand-gold: #d4a85f;
+	--color-brand-gold-light: #f3d19c;
+	--color-brand-text: #f5f7fa;
+	--color-brand-muted: #b7bdc9;
+	--color-brand-border: #2b313d;
 }
 
-html,
+html {
+	scroll-behavior: smooth;
+}
+
 body {
-	font-family: "IBM Plex Sans", system-ui, sans-serif;
+	font-family: var(--font-sans);
+	background-color: var(--color-brand-bg);
+	color: var(--color-brand-muted);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-heading);
+	color: var(--color-brand-text);
+}
+
+.font-heading {
+	font-family: var(--font-heading);
+}
+
+.font-accent {
+	font-family: var(--font-accent);
+	font-style: italic;
+	font-weight: 400;
+}
+
+.gold-gradient-text {
+	background: linear-gradient(135deg, #d4a85f 0%, #f3d19c 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.gold-gradient-line {
+	height: 1px;
+	background: linear-gradient(90deg, transparent, #d4a85f 50%, transparent);
+}
+
+.btn-primary-luxury {
+	background: linear-gradient(135deg, #d4a85f 0%, #b88945 100%);
+	color: #0b0d12;
+	box-shadow: 0 8px 32px rgba(212, 168, 95, 0.2);
+	transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.btn-primary-luxury:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 40px rgba(212, 168, 95, 0.35);
+}
+
+.card-luxury {
+	background: var(--color-brand-elevated);
+	border: 1px solid var(--color-brand-border);
+	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+	transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card-luxury:hover {
+	border-color: rgba(212, 168, 95, 0.35);
+	transform: translateY(-4px);
+	box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+}
+
+.image-zoom {
+	overflow: hidden;
+}
+
+.image-zoom img {
+	transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-zoom:hover img {
+	transform: scale(1.06);
+}
+
+.reveal {
+	opacity: 0;
+	transform: translateY(28px);
+	transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.cinematic-overlay {
+	background: linear-gradient(
+		180deg,
+		rgba(11, 13, 18, 0.55) 0%,
+		rgba(11, 13, 18, 0.82) 45%,
+		rgba(11, 13, 18, 0.95) 100%
+	);
 }

@@ -1,29 +1,31 @@
 ---
 import Button from './Button.astro';
+import LuxuryAccent from './LuxuryAccent.astro';
 ---
 
-<section class="relative overflow-hidden py-20 text-brand-white sm:py-24 lg:py-28">
+<section class="relative min-h-[92vh] overflow-hidden">
 	<img
-		src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=2200&q=80"
-		alt="Engineering team reviewing large development map plans"
+		src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80"
+		alt="Luxury metropolitan skyline at dusk"
 		class="absolute inset-0 h-full w-full object-cover"
 		loading="eager"
 	/>
-	<div class="absolute inset-0 bg-black/90"></div>
-	<div class="relative mx-auto grid max-w-container items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-		<div>
-			<p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand-gold">Trusted Engineering Partner</p>
-			<h1 class="mt-4 text-3xl font-bold leading-tight tracking-[0.02em] sm:text-4xl lg:text-5xl">
-				Precision map design and layout planning for modern infrastructure.
+	<div class="cinematic-overlay absolute inset-0"></div>
+	<div class="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/80 to-transparent"></div>
+
+	<div class="relative mx-auto flex min-h-[92vh] max-w-container flex-col justify-end px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pb-28">
+		<div class="reveal max-w-4xl">
+			<p class="text-xs font-medium uppercase tracking-[0.22em] text-brand-gold">Metropolitan Development Partners</p>
+			<h1 class="mt-6 font-heading text-4xl font-bold leading-[0.95] tracking-cinematic text-brand-text sm:text-6xl lg:text-7xl xl:text-8xl">
+				CRAFTING <LuxuryAccent>timeless</LuxuryAccent> URBAN LANDMARKS
 			</h1>
-			<p class="mt-6 max-w-xl text-base leading-7 text-brand-light sm:text-[18px]">
-				MD Enterprises helps developers, institutions, and civic authorities transform land into structured, compliant, and future-ready developments.
+			<p class="mt-8 max-w-xl text-base leading-relaxed text-brand-muted sm:text-lg">
+				MD Enterprises delivers map design, layout planning, and engineering consultancy for investment-grade developments across premium urban corridors.
 			</p>
-			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+			<div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
 				<Button href="/contact" className="w-full sm:w-auto">Request Consultation</Button>
-				<Button href="/projects" variant="secondary" className="w-full sm:w-auto">View Projects</Button>
+				<Button href="/projects" variant="secondary" className="w-full sm:w-auto">View Portfolio</Button>
 			</div>
 		</div>
-		<div class="hidden lg:block"></div>
 	</div>
 </section>

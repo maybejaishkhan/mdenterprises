@@ -1,18 +1,45 @@
 ---
+import LuxuryAccent from './LuxuryAccent.astro';
+
 interface Props {
 	title: string;
+	accentWord?: string;
 	description: string;
 	image?: string;
 }
 
-const { title, description, image = 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=2200&q=80' } = Astro.props;
+const {
+	title,
+	accentWord,
+	description,
+	image = 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=2400&q=80',
+} = Astro.props;
+
+const parts = accentWord ? title.split(accentWord) : null;
 ---
 
-<section class="relative overflow-hidden py-14 text-brand-white sm:py-20">
-	<img src={image} alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-	<div class="absolute inset-0 bg-black/70"></div>
+<section class="relative overflow-hidden py-28 sm:py-36">
+	<img src={image} alt="" class="absolute inset-0 h-full w-full object-cover" loading="eager" />
+	<div class="cinematic-overlay absolute inset-0"></div>
+	<div class="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/85 to-brand-bg/40"></div>
+
 	<div class="relative mx-auto max-w-container px-4 sm:px-6 lg:px-8">
-		<h1 class="text-3xl font-bold tracking-[0.02em] sm:text-4xl lg:text-5xl">{title}</h1>
-		<p class="mt-4 max-w-3xl text-base leading-7 text-brand-light">{description}</p>
+		<div class="reveal max-w-4xl">
+			<p class="text-xs uppercase tracking-[0.2em] text-brand-gold">MD Enterprises</p>
+			<h1 class="mt-6 font-heading text-4xl font-bold leading-[0.95] tracking-cinematic text-brand-text sm:text-5xl lg:text-6xl">
+				{
+					parts ? (
+						<>
+							{parts[0]}
+							<LuxuryAccent>{accentWord}</LuxuryAccent>
+							{parts[1]}
+						</>
+					) : (
+						title
+					)
+				}
+			</h1>
+			<p class="mt-6 max-w-2xl text-base leading-relaxed text-brand-muted sm:text-lg">{description}</p>
+		</div>
 	</div>
 </section>

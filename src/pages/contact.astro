@@ -5,26 +5,29 @@ import ContactForm from '../components/ContactForm.astro';
 ---
 
 <Layout
-	title="Contact MD Enterprises | Start Your Project Consultation"
-	description="Contact MD Enterprises for map design, layout planning, and engineering consultancy support."
+	title="Contact MD Enterprises | Start Your Development Consultation"
+	description="Contact MD Enterprises for premium map design, layout planning, and engineering consultancy."
 	path="/contact"
 >
 	<PageHero
-		title="Contact Us"
-		description="Share your project goals and site details. Our team will connect with you to discuss the right planning and engineering strategy."
+		title="Begin your next development"
+		accentWord="development"
+		description="Share your project vision and site details. Our team will connect with you to define the right planning and engineering strategy."
+		image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2400&q=80"
 	/>
-	<section class="py-16 sm:py-20">
-		<div class="mx-auto grid max-w-container gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-			<div class="border border-brand-slate bg-brand-slate/30 p-8">
-				<h2 class="text-2xl font-bold text-brand-white">Get in touch</h2>
-				<p class="mt-4 text-sm leading-7 text-brand-light">
-					Whether you are in early feasibility or ready for detailed planning, we can align your project with practical engineering direction.
+	<section class="py-16">
+		<div class="mx-auto grid max-w-container gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+			<div class="reveal">
+				<p class="text-xs uppercase tracking-[0.2em] text-brand-gold">Get in Touch</p>
+				<h2 class="mt-4 font-heading text-3xl font-bold tracking-cinematic text-brand-text sm:text-4xl">Let's shape your vision</h2>
+				<p class="mt-5 text-sm leading-relaxed text-brand-muted sm:text-base">
+					Whether you are in early feasibility or ready for detailed planning, we align your project with practical engineering direction and premium urban outcomes.
 				</p>
-				<div class="mt-8 space-y-4 text-sm text-brand-light">
-					<p><span class="font-semibold">Office:</span> 123 Civic Center Avenue, Pune, Maharashtra 411001</p>
-					<p><span class="font-semibold">Phone:</span> +91 98765 43210</p>
-					<p><span class="font-semibold">Email:</span> contact@mdenterprises.in</p>
-					<p><span class="font-semibold">Hours:</span> Monday to Saturday, 9:00 AM to 6:30 PM</p>
+				<div class="mt-10 space-y-5 border-t border-brand-border pt-8 text-sm text-brand-muted">
+					<p><span class="font-semibold uppercase tracking-[0.1em] text-brand-text">Office</span><br />Latifabad, Hyderabad, Sindh 71000</p>
+					<p><span class="font-semibold uppercase tracking-[0.1em] text-brand-text">Phone</span><br />+92 300 1234567</p>
+					<p><span class="font-semibold uppercase tracking-[0.1em] text-brand-text">Email</span><br />info@mdenterprises.pk</p>
+					<p><span class="font-semibold uppercase tracking-[0.1em] text-brand-text">Hours</span><br />Monday to Saturday, 9:00 AM – 6:30 PM</p>
 				</div>
 			</div>
 			<ContactForm />

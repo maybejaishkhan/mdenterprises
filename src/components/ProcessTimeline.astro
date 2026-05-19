@@ -1,0 +1,50 @@
+---
+import SectionHeader from './SectionHeader.astro';
+
+const steps = [
+	{
+		step: '01',
+		title: 'Discovery & Site Intelligence',
+		description: 'Comprehensive site diagnostics, constraints mapping, and regulatory landscape assessment.',
+	},
+	{
+		step: '02',
+		title: 'Concept & Master Planning',
+		description: 'Strategic layout development with circulation, zoning alignment, and phased infrastructure logic.',
+	},
+	{
+		step: '03',
+		title: 'Engineering Validation',
+		description: 'Technical feasibility, structural guidance, and compliance-ready documentation preparation.',
+	},
+	{
+		step: '04',
+		title: 'Execution Advisory',
+		description: 'On-ground coordination, milestone governance, and quality assurance through delivery.',
+	},
+];
+---
+
+<section class="py-16">
+	<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+		<SectionHeader
+			label="Our Process"
+			title="WHERE VISION MEETS structure"
+			accentWord="structure"
+			description="A disciplined four-stage methodology designed for premium developments that demand precision, compliance, and lasting value."
+			align="center"
+		/>
+
+		<div class="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+			{
+				steps.map((item, index) => (
+					<article class={`reveal card-luxury p-8 ${index % 2 === 1 ? 'xl:mt-12' : ''}`}>
+						<p class="font-heading text-sm font-bold text-brand-gold">{item.step}</p>
+						<h3 class="mt-6 font-heading text-xl font-bold leading-tight tracking-cinematic text-brand-text">{item.title}</h3>
+						<p class="mt-4 text-sm leading-relaxed text-brand-muted">{item.description}</p>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>

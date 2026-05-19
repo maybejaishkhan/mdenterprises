@@ -1,0 +1,33 @@
+---
+import LuxuryAccent from './LuxuryAccent.astro';
+
+interface Props {
+	label: string;
+	title: string;
+	accentWord?: string;
+	description?: string;
+	align?: 'left' | 'center';
+}
+
+const { label, title, accentWord, description, align = 'left' } = Astro.props;
+const alignClass = align === 'center' ? 'text-center mx-auto' : '';
+const parts = accentWord ? title.split(accentWord) : null;
+---
+
+<header class={`reveal max-w-3xl ${alignClass}`}>
+	<p class="text-xs font-medium uppercase tracking-[0.2em] text-brand-gold">{label}</p>
+	<h2 class="mt-6 font-heading text-3xl font-bold leading-[1.05] tracking-cinematic text-brand-text sm:text-4xl lg:text-5xl">
+		{
+			parts ? (
+				<>
+					{parts[0]}
+					<LuxuryAccent>{accentWord}</LuxuryAccent>
+					{parts[1]}
+				</>
+			) : (
+				title
+			)
+		}
+	</h2>
+	{description && <p class="mt-5 text-base leading-relaxed text-brand-muted sm:text-lg">{description}</p>}
+</header>

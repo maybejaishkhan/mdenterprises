@@ -1,44 +1,87 @@
 ---
+import SectionHeader from './SectionHeader.astro';
+
 const projects = [
 	{
-		name: 'Greenfield Smart Township',
-		summary: '300-acre integrated township layout with phased infrastructure strategy.',
-		image:
-			'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80',
+		name: 'Aurum Heights',
+		location: 'Hyderabad',
+		category: 'Luxury Residential Tower',
+		image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80',
+		size: 'large',
 	},
 	{
-		name: 'Riverside Logistics Hub',
-		summary: 'Industrial corridor mapping and transport-optimized site planning.',
-		image:
-			'https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1000&q=80',
+		name: 'Meridian Commerce District',
+		location: 'Karachi',
+		category: 'Mixed-Use Development',
+		image: 'https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1200&q=80',
+		size: 'medium',
 	},
 	{
-		name: 'Cityview Mixed-Use Block',
-		summary: 'Urban redevelopment layout balancing residential and retail utility.',
-		image:
-			'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1000&q=80',
+		name: 'Crownline Residences',
+		location: 'Lahore',
+		category: 'Premium Urban Living',
+		image: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80',
+		size: 'medium',
+	},
+	{
+		name: 'Axis Industrial Gateway',
+		location: 'Multan',
+		category: 'Logistics & Infrastructure',
+		image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
+		size: 'medium',
 	},
 ];
 ---
 
-<section class="py-16 sm:py-20">
+<section class="py-16">
 	<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
-		<h2 class="text-3xl font-bold tracking-[0.02em] text-brand-white">Featured Projects</h2>
-		<p class="mt-4 max-w-2xl text-base text-brand-light">
-			Every project reflects our commitment to practical design standards, technical rigor, and long-term site functionality.
-		</p>
-		<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+		<SectionHeader
+			label="Portfolio"
+			title="Investment-grade developments"
+			accentWord="developments"
+			description="A curated selection of metropolitan projects defined by architectural precision, regulatory clarity, and long-term asset value."
+		/>
+
+		<div class="mt-16 grid gap-5 lg:grid-cols-12">
+			<article class="reveal group relative overflow-hidden lg:col-span-7 lg:row-span-2">
+				<div class="image-zoom relative h-[420px] lg:h-full lg:min-h-[640px]">
+					<img
+						src={projects[0].image}
+						alt={`${projects[0].name} luxury development`}
+						class="h-full w-full object-cover"
+						loading="lazy"
+					/>
+					<div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-brand-bg/20 to-transparent"></div>
+					<div class="absolute inset-x-0 bottom-0 p-8 sm:p-10">
+						<p class="text-xs uppercase tracking-[0.18em] text-brand-gold">{projects[0].category}</p>
+						<h3 class="mt-3 font-heading text-3xl font-bold tracking-cinematic text-brand-text sm:text-4xl">{projects[0].name}</h3>
+						<p class="mt-2 text-sm text-brand-muted">{projects[0].location}</p>
+					</div>
+				</div>
+			</article>
+
 			{
-				projects.map((project) => (
-					<article class="overflow-hidden border border-brand-slate bg-brand-slate/40 shadow-lg shadow-black/20 transition duration-300 hover:border-brand-gold">
-						<img src={project.image} alt={`${project.name} development project`} class="h-56 w-full object-cover" loading="lazy" />
-						<div class="p-6">
-							<h3 class="text-xl font-semibold text-brand-white">{project.name}</h3>
-							<p class="mt-2 text-sm leading-6 text-brand-light">{project.summary}</p>
+				projects.slice(1).map((project) => (
+					<article class="reveal group relative overflow-hidden lg:col-span-5">
+						<div class="image-zoom relative h-72 sm:h-80">
+							<img src={project.image} alt={`${project.name} development`} class="h-full w-full object-cover" loading="lazy" />
+							<div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-transparent opacity-90 transition duration-700 group-hover:opacity-100"></div>
+							<div class="absolute inset-x-0 bottom-0 translate-y-2 p-6 transition duration-700 group-hover:translate-y-0">
+								<p class="text-xs uppercase tracking-[0.16em] text-brand-gold">{project.category}</p>
+								<h3 class="mt-2 font-heading text-xl font-bold tracking-cinematic text-brand-text">{project.name}</h3>
+								<p class="mt-1 text-sm text-brand-muted opacity-0 transition duration-700 group-hover:opacity-100">{project.location}</p>
+							</div>
 						</div>
 					</article>
 				))
 			}
+		</div>
+
+		<div class="reveal mt-12 text-center">
+			<a href="/projects" class="inline-flex items-center gap-3 font-sans text-xs font-semibold uppercase tracking-[0.14em] text-brand-gold transition hover:text-brand-gold-light">
+				Explore Full Portfolio
+				<span aria-hidden="true">→</span>
+			</a>
 		</div>
 	</div>
 </section>

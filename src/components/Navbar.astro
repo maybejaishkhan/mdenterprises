@@ -1,5 +1,6 @@
 ---
 import Button from './Button.astro';
+import logo from '../assets/logo.jpg';
 
 const navLinks = [
 	{ href: '/', label: 'Home' },
@@ -10,17 +11,22 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 border-b border-brand-slate bg-brand-charcoal/95 backdrop-blur">
-	<div class="mx-auto max-w-container px-4 py-4 sm:px-6 lg:px-8">
-		<div class="flex w-full items-center justify-between gap-3 sm:gap-4">
-			<a href="/" class="text-lg font-bold tracking-[0.03em] text-brand-white sm:text-xl">MD <span class="text-brand-gold">Enterprises</span></a>
+<header class="fixed inset-x-0 top-0 z-50 border-b border-brand-border/80 bg-brand-bg/90 backdrop-blur-md">
+	<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+		<div class="flex h-20 items-center justify-between gap-4">
+			<a href="/" class="flex shrink-0 items-center gap-3">
+				<img src={logo.src} alt="MD Enterprises logo" class="h-11 w-auto object-contain sm:h-12" width={logo.width} height={logo.height} />
+			</a>
 
-			<nav aria-label="Primary navigation" class="hidden md:block">
-				<ul class="flex items-center gap-2 lg:gap-4">
+			<nav aria-label="Primary navigation" class="hidden lg:block">
+				<ul class="flex items-center gap-1">
 					{
 						navLinks.map((link) => (
 							<li>
-								<a href={link.href} class="px-3 py-2 text-sm font-semibold uppercase tracking-[0.08em] text-brand-light transition hover:bg-brand-slate hover:text-brand-gold">
+								<a
+									href={link.href}
+									class="px-4 py-2 font-sans text-xs font-medium uppercase tracking-[0.12em] text-brand-muted transition duration-500 hover:text-brand-gold-light"
+								>
 									{link.label}
 								</a>
 							</li>
@@ -29,12 +35,12 @@ const navLinks = [
 				</ul>
 			</nav>
 
-			<div class="flex items-center gap-2 sm:gap-3">
-				<Button href="/contact" className="px-3 py-2 text-xs sm:px-4 sm:py-2 sm:text-[15px]">Get a Quote</Button>
+			<div class="flex items-center gap-3">
+				<Button href="/contact" className="hidden px-5 py-2.5 sm:inline-flex">Get a Quote</Button>
 				<button
 					id="menu-toggle"
 					type="button"
-					class="inline-flex h-10 w-10 items-center justify-center border border-brand-slate text-brand-white transition hover:bg-brand-slate md:hidden"
+					class="inline-flex h-11 w-11 items-center justify-center border border-brand-border text-brand-text transition duration-500 hover:border-brand-gold hover:text-brand-gold lg:hidden"
 					aria-expanded="false"
 					aria-controls="mobile-menu"
 					aria-label="Toggle navigation menu"
@@ -44,21 +50,29 @@ const navLinks = [
 			</div>
 		</div>
 
-		<nav id="mobile-menu" aria-label="Mobile navigation" class="hidden border-t border-brand-slate pt-3 md:hidden">
-			<ul class="flex flex-col gap-1">
+		<nav id="mobile-menu" aria-label="Mobile navigation" class="hidden border-t border-brand-border pb-5 pt-3 lg:hidden">
+			<ul class="flex flex-col">
 				{
 					navLinks.map((link) => (
 						<li>
-							<a href={link.href} class="block px-3 py-2 text-sm font-semibold uppercase tracking-[0.08em] text-brand-light transition hover:bg-brand-slate hover:text-brand-gold">
+							<a
+								href={link.href}
+								class="block border-b border-brand-border/60 px-2 py-3 font-sans text-xs font-medium uppercase tracking-[0.12em] text-brand-muted transition hover:text-brand-gold-light"
+							>
 								{link.label}
 							</a>
 						</li>
 					))
 				}
+				<li class="mt-4 px-2">
+					<Button href="/contact" className="w-full">Get a Quote</Button>
+				</li>
 			</ul>
 		</nav>
 	</div>
 </header>
+
+<div class="h-20" aria-hidden="true"></div>
 
 <script>
 	const toggleButton = document.getElementById('menu-toggle');

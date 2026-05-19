@@ -1,16 +1,29 @@
 ---
 import Button from './Button.astro';
+import LuxuryAccent from './LuxuryAccent.astro';
 ---
 
-<section class="py-16 sm:py-20">
-	<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
-		<div class="border border-brand-slate bg-brand-slate px-6 py-10 text-brand-white shadow-xl shadow-black/30 sm:px-10">
-			<h2 class="text-3xl font-bold">Ready to plan your next development with confidence?</h2>
-			<p class="mt-4 max-w-2xl text-base text-brand-light">
-				Speak with our engineering team to define the right strategy for mapping, layout feasibility, and project execution.
+<section class="relative overflow-hidden py-16">
+	<img
+		src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=2200&q=80"
+		alt="Metropolitan cityscape at night"
+		class="absolute inset-0 h-full w-full object-cover blur-sm"
+		loading="lazy"
+	/>
+	<div class="cinematic-overlay absolute inset-0"></div>
+
+	<div class="relative mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+		<div class="reveal mx-auto max-w-3xl text-center">
+			<p class="text-xs uppercase tracking-[0.2em] text-brand-gold">Begin Your Project</p>
+			<h2 class="mt-6 font-heading text-3xl font-bold leading-[1.05] tracking-cinematic text-brand-text sm:text-5xl lg:text-6xl">
+				BUILDING modern <LuxuryAccent>skylines</LuxuryAccent> with confidence
+			</h2>
+			<p class="mt-6 text-base leading-relaxed text-brand-muted sm:text-lg">
+				Partner with MD Enterprises to transform land into structured, compliant, and investment-ready urban developments.
 			</p>
-			<div class="mt-8">
-				<Button href="/contact">Book a Consultation</Button>
+			<div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+				<Button href="/contact">Schedule Consultation</Button>
+				<Button href="/services" variant="secondary">Explore Services</Button>
 			</div>
 		</div>
 	</div>

@@ -1,37 +1,53 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
+import CompanyMetrics from '../components/CompanyMetrics.astro';
 import CtaBanner from '../components/CtaBanner.astro';
+import SectionHeader from '../components/SectionHeader.astro';
 ---
 
 <Layout
-	title="About MD Enterprises | Engineering Expertise and Planning Excellence"
-	description="Learn about MD Enterprises, our engineering approach, and how we deliver reliable map design and planning solutions."
+	title="About MD Enterprises | Premium Engineering & Development"
+	description="Discover MD Enterprises — a premium engineering and urban development partner focused on architectural precision and investment-grade outcomes."
 	path="/about"
 >
 	<PageHero
-		title="About MD Enterprises"
-		description="We are a specialist engineering firm focused on practical planning intelligence, regulatory alignment, and sustainable development outcomes."
+		title="Defining metropolitan excellence"
+		accentWord="excellence"
+		description="We are a specialist firm focused on practical planning intelligence, regulatory alignment, and timeless development outcomes for premium urban projects."
+		image="https://images.unsplash.com/photo-1511818966892-d3d833cb0010?auto=format&fit=crop&w=2400&q=80"
 	/>
-	<section class="py-16 sm:py-20">
-		<div class="mx-auto grid max-w-container gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-			<div>
-				<h2 class="text-3xl font-bold tracking-[0.02em] text-brand-white">Our Mission</h2>
-				<p class="mt-5 text-base leading-7 text-brand-light">
-					To empower developers and institutions with engineering-backed planning that minimizes risk and enables long-term infrastructure performance.
-				</p>
-				<p class="mt-4 text-base leading-7 text-brand-light">
-					Our team combines site analysis, policy awareness, and technical precision to ensure every project begins with a viable and scalable foundation.
-				</p>
-			</div>
-			<div class="border border-brand-slate bg-brand-slate/30 p-8 shadow-lg shadow-black/20">
-				<h3 class="text-xl font-semibold text-brand-white">What We Value</h3>
-				<ul class="mt-6 space-y-4 text-sm leading-6 text-brand-light">
-					<li class="bg-brand-charcoal p-4">Accountability in every recommendation and deliverable.</li>
-					<li class="bg-brand-charcoal p-4">Clarity in communication with all project stakeholders.</li>
-					<li class="bg-brand-charcoal p-4">Engineering rigor that supports safe, compliant outcomes.</li>
-					<li class="bg-brand-charcoal p-4">Adaptive planning that reflects future growth and operations.</li>
-				</ul>
+	<CompanyMetrics />
+	<section class="py-16">
+		<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+			<div class="grid gap-16 lg:grid-cols-12">
+				<div class="lg:col-span-5">
+					<SectionHeader
+						label="Our Story"
+						title="Built on engineering discipline"
+						accentWord="discipline"
+						description="MD Enterprises combines site intelligence, policy awareness, and technical precision to ensure every project begins with a viable and scalable foundation."
+					/>
+				</div>
+				<div class="lg:col-span-7">
+					<div class="card-luxury p-8 sm:p-10">
+						<h3 class="font-heading text-xl font-bold text-brand-text">What We Value</h3>
+						<ul class="mt-8 space-y-6">
+							<li class="border-b border-brand-border pb-6 last:border-0 last:pb-0">
+								<p class="font-heading text-sm font-semibold uppercase tracking-[0.1em] text-brand-gold">Accountability</p>
+								<p class="mt-2 text-sm leading-relaxed text-brand-muted">Every recommendation and deliverable reflects technical integrity and client trust.</p>
+							</li>
+							<li class="border-b border-brand-border pb-6 last:border-0 last:pb-0">
+								<p class="font-heading text-sm font-semibold uppercase tracking-[0.1em] text-brand-gold">Clarity</p>
+								<p class="mt-2 text-sm leading-relaxed text-brand-muted">Transparent communication with stakeholders at every stage of development.</p>
+							</li>
+							<li class="border-b border-brand-border pb-6 last:border-0 last:pb-0">
+								<p class="font-heading text-sm font-semibold uppercase tracking-[0.1em] text-brand-gold">Precision</p>
+								<p class="mt-2 text-sm leading-relaxed text-brand-muted">Engineering rigor that supports safe, compliant, and enduring urban outcomes.</p>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

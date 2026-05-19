@@ -1,47 +1,60 @@
 ---
+import SectionHeader from './SectionHeader.astro';
+
 const services = [
 	{
+		number: '01',
 		title: 'Map Designing',
 		description:
-			'High-precision topographic and utility-aligned mapping to support zoning, approvals, and long-term development planning.',
-		image:
-			'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=80',
+			'Precision surveying and utility-aligned mapping for zoning approvals, master planning, and long-term urban expansion.',
 	},
 	{
+		number: '02',
 		title: 'Layout Planning',
 		description:
-			'Strategic land use planning that optimizes circulation, open space, infrastructure integration, and phased expansion.',
-		image:
-			'https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=1000&q=80',
+			'Strategic land-use frameworks that optimize circulation, open space ratios, infrastructure integration, and phased delivery.',
 	},
 	{
+		number: '03',
 		title: 'Engineering Consultancy',
 		description:
-			'Feasibility studies, structural guidance, compliance reviews, and execution frameworks for public and private projects.',
-		image:
-			'https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=1000&q=80',
+			'Feasibility studies, structural advisory, compliance reviews, and execution frameworks for institutional-grade developments.',
 	},
 ];
 ---
 
-<section class="py-16 sm:py-20">
+<section class="border-t border-brand-border bg-brand-elevated py-16">
 	<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
-		<h2 class="text-3xl font-bold tracking-[0.02em] text-brand-white">Core Services</h2>
-		<p class="mt-4 max-w-2xl text-base text-brand-light">
-			Our service model is structured to support project stakeholders from early planning decisions through execution-level engineering strategy.
-		</p>
-		<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-			{
-				services.map((service) => (
-					<article class="overflow-hidden border border-brand-slate bg-brand-slate/40 shadow-lg shadow-black/20 transition duration-300 hover:border-brand-gold">
-						<img src={service.image} alt={`${service.title} professional service visual`} class="h-52 w-full object-cover" loading="lazy" />
-						<div class="p-6">
-							<h3 class="text-xl font-semibold text-brand-white">{service.title}</h3>
-							<p class="mt-3 text-sm leading-6 text-brand-light">{service.description}</p>
-						</div>
-					</article>
-				))
-			}
+		<div class="grid gap-16 lg:grid-cols-12 lg:gap-20">
+			<div class="lg:col-span-4">
+				<SectionHeader
+					label="Expertise"
+					title="Structured services for metropolitan growth"
+					accentWord="metropolitan"
+					description="Every engagement is engineered to support confident investment decisions and elegant urban outcomes."
+				/>
+			</div>
+
+			<div class="lg:col-span-8">
+				<div class="space-y-0">
+					{
+						services.map((service) => (
+							<article class="reveal card-luxury group border-x-0 border-t-0 border-b border-brand-border bg-transparent px-8 py-8 shadow-none last:border-b-0 hover:bg-brand-surface/40">
+								<div class="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+									<div class="flex items-start gap-6">
+										<span class="font-heading text-sm font-bold text-brand-gold">{service.number}</span>
+										<div>
+											<h3 class="font-heading text-2xl font-bold tracking-cinematic text-brand-text">{service.title}</h3>
+											<p class="mt-4 max-w-xl text-sm leading-relaxed text-brand-muted sm:text-base">{service.description}</p>
+										</div>
+									</div>
+									<span class="hidden text-brand-gold opacity-0 transition duration-500 group-hover:opacity-100 sm:inline">→</span>
+								</div>
+							</article>
+						))
+					}
+				</div>
+			</div>
 		</div>
 	</div>
 </section>

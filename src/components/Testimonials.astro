@@ -1,37 +1,45 @@
 ---
+import SectionHeader from './SectionHeader.astro';
+
 const testimonials = [
 	{
+		quote:
+			'MD Enterprises delivered a planning framework that elevated our project positioning and accelerated authority approvals with remarkable clarity.',
 		name: 'Rohit Mehta',
 		role: 'Director, Skyline Habitat',
-		quote:
-			'MD Enterprises provided an exceptionally clear layout framework that accelerated our approvals and reduced avoidable redesign cycles.',
 	},
 	{
+		quote:
+			'Their consultancy approach is measured, technical, and investment-minded. Every recommendation reflected long-term asset performance.',
 		name: 'Neha Kulkarni',
 		role: 'Project Lead, Civic Growth Council',
-		quote:
-			'Their engineering consultancy was practical and data-driven. We were able to make faster infrastructure decisions with confidence.',
 	},
 	{
+		quote:
+			'From initial mapping to execution advisory, the team maintained architectural discipline and corporate-level communication throughout.',
 		name: 'Vikram Desai',
 		role: 'Managing Partner, Axis Infra Developers',
-		quote:
-			'From map design to execution advisory, the team was reliable, responsive, and technically thorough at every stage.',
 	},
 ];
 ---
 
-<section class="py-16 sm:py-20">
+<section class="border-t border-brand-border bg-brand-elevated py-16">
 	<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
-		<h2 class="text-3xl font-bold tracking-[0.02em] text-brand-white">Client Testimonials</h2>
-		<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+		<SectionHeader
+			label="Client Perspectives"
+			title="Trusted by visionary developers"
+			accentWord="visionary"
+			description="Partnerships built on technical rigor, regulatory confidence, and premium delivery standards."
+		/>
+
+		<div class="mt-16 grid gap-6 lg:grid-cols-3">
 			{
 				testimonials.map((item) => (
-					<figure class="border border-brand-slate bg-brand-slate/30 p-6 shadow shadow-black/20">
-						<blockquote class="text-sm leading-6 text-brand-light">"{item.quote}"</blockquote>
-						<figcaption class="mt-4">
-							<p class="text-sm font-semibold text-brand-white">{item.name}</p>
-							<p class="text-xs text-brand-gold">{item.role}</p>
+					<figure class="reveal card-luxury flex flex-col justify-between p-8">
+						<blockquote class="font-accent text-2xl leading-snug text-brand-gold-light">"{item.quote}"</blockquote>
+						<figcaption class="mt-10 border-t border-brand-border pt-6">
+							<p class="font-heading text-sm font-semibold uppercase tracking-[0.1em] text-brand-text">{item.name}</p>
+							<p class="mt-2 text-xs uppercase tracking-[0.14em] text-brand-muted">{item.role}</p>
 						</figcaption>
 					</figure>
 				))

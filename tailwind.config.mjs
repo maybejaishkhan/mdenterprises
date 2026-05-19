@@ -5,22 +5,34 @@ export default {
 		extend: {
 			colors: {
 				brand: {
-					charcoal: '#000000',
-					slate: '#3A3D45',
-					gold: '#C9A56A',
-					deepGold: '#A9864D',
-					light: '#D9D9D9',
-					white: '#FFFFFF',
+					bg: '#0B0D12',
+					elevated: '#12151C',
+					surface: '#171A22',
+					gold: '#D4A85F',
+					'gold-light': '#F3D19C',
+					text: '#F5F7FA',
+					muted: '#B7BDC9',
+					border: '#2B313D',
 				},
 			},
 			fontFamily: {
-				sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				heading: ['Satoshi', 'Inter', 'system-ui', 'sans-serif'],
+				accent: ['"Saol Display"', '"Cormorant Garamond"', 'Georgia', 'serif'],
 			},
 			maxWidth: {
-				container: '1280px',
+				container: '1440px',
 			},
 			spacing: {
-				section: '120px',
+				section: '7.5rem',
+				'section-lg': '9rem',
+			},
+			letterSpacing: {
+				cinematic: '-0.03em',
+			},
+			transitionDuration: {
+				luxury: '500ms',
+				cinematic: '900ms',
 			},
 		},
 	},

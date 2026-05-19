@@ -2,49 +2,49 @@
 import Button from './Button.astro';
 ---
 
-<form class="space-y-5 border border-brand-slate bg-brand-slate/30 p-8 shadow-lg shadow-black/20" aria-label="Contact form">
+<form class="card-luxury space-y-6 p-8 sm:p-10" aria-label="Contact form">
 	<div>
-		<label for="name" class="mb-2 block text-sm font-medium uppercase tracking-[0.08em] text-brand-white">Full Name</label>
+		<label for="name" class="mb-2 block font-sans text-xs font-medium uppercase tracking-[0.14em] text-brand-text">Full Name</label>
 		<input
 			id="name"
 			name="name"
 			type="text"
 			required
-			class="w-full border border-brand-slate bg-brand-charcoal px-4 py-3 text-sm text-brand-white outline-none transition focus:border-brand-gold"
+			class="w-full border border-brand-border bg-brand-bg px-4 py-3.5 font-sans text-sm text-brand-text outline-none transition duration-500 focus:border-brand-gold"
 			placeholder="Your full name"
 		/>
 	</div>
 	<div>
-		<label for="email" class="mb-2 block text-sm font-medium uppercase tracking-[0.08em] text-brand-white">Email Address</label>
+		<label for="email" class="mb-2 block font-sans text-xs font-medium uppercase tracking-[0.14em] text-brand-text">Email Address</label>
 		<input
 			id="email"
 			name="email"
 			type="email"
 			required
-			class="w-full border border-brand-slate bg-brand-charcoal px-4 py-3 text-sm text-brand-white outline-none transition focus:border-brand-gold"
+			class="w-full border border-brand-border bg-brand-bg px-4 py-3.5 font-sans text-sm text-brand-text outline-none transition duration-500 focus:border-brand-gold"
 			placeholder="name@company.com"
 		/>
 	</div>
 	<div>
-		<label for="phone" class="mb-2 block text-sm font-medium uppercase tracking-[0.08em] text-brand-white">Phone Number</label>
+		<label for="phone" class="mb-2 block font-sans text-xs font-medium uppercase tracking-[0.14em] text-brand-text">Phone Number</label>
 		<input
 			id="phone"
 			name="phone"
 			type="tel"
 			required
-			class="w-full border border-brand-slate bg-brand-charcoal px-4 py-3 text-sm text-brand-white outline-none transition focus:border-brand-gold"
-			placeholder="+91 98765 43210"
+			class="w-full border border-brand-border bg-brand-bg px-4 py-3.5 font-sans text-sm text-brand-text outline-none transition duration-500 focus:border-brand-gold"
+			placeholder="+92 300 1234567"
 		/>
 	</div>
 	<div>
-		<label for="message" class="mb-2 block text-sm font-medium uppercase tracking-[0.08em] text-brand-white">Project Requirements</label>
+		<label for="message" class="mb-2 block font-sans text-xs font-medium uppercase tracking-[0.14em] text-brand-text">Project Requirements</label>
 		<textarea
 			id="message"
 			name="message"
 			required
 			rows="5"
-			class="w-full border border-brand-slate bg-brand-charcoal px-4 py-3 text-sm text-brand-white outline-none transition focus:border-brand-gold"
-			placeholder="Tell us about your site, goals, and expected timeline."
+			class="w-full border border-brand-border bg-brand-bg px-4 py-3.5 font-sans text-sm text-brand-text outline-none transition duration-500 focus:border-brand-gold"
+			placeholder="Share your development vision, site location, and timeline."
 		></textarea>
 	</div>
 	<Button type="submit" className="w-full">Submit Inquiry</Button>

@@ -1,28 +1,44 @@
-<footer class="mt-20 border-t border-brand-slate bg-brand-charcoal">
-	<div class="mx-auto grid max-w-container gap-8 px-4 py-12 text-center sm:px-6 md:grid-cols-3 md:text-left lg:px-8">
-		<div>
-			<h2 class="text-lg font-semibold text-brand-white">MD Enterprises</h2>
-			<p class="mt-3 text-sm leading-6 text-brand-light">
-				Comprehensive civil engineering expertise across map designing, layout planning, and strategic consultancy.
-			</p>
+---
+import logo from '../assets/logo.jpg';
+---
+
+<footer class="border-t border-brand-border bg-brand-bg">
+	<div class="mx-auto max-w-container px-4 py-16 sm:px-6 lg:px-8">
+		<div class="grid gap-12 md:grid-cols-12">
+			<div class="md:col-span-5">
+				<a href="/" class="inline-block">
+					<img src={logo.src} alt="MD Enterprises logo" class="h-14 w-auto object-contain" width={logo.width} height={logo.height} />
+				</a>
+				<p class="mt-6 max-w-sm text-sm leading-relaxed text-brand-muted">
+					Premium map design, layout planning, and engineering consultancy for metropolitan developments and investment-grade real estate.
+				</p>
+			</div>
+
+			<div class="md:col-span-3">
+				<h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-text">Navigation</h3>
+				<ul class="mt-5 space-y-3 text-sm text-brand-muted">
+					<li><a href="/about" class="transition hover:text-brand-gold-light">About</a></li>
+					<li><a href="/services" class="transition hover:text-brand-gold-light">Services</a></li>
+					<li><a href="/projects" class="transition hover:text-brand-gold-light">Projects</a></li>
+					<li><a href="/contact" class="transition hover:text-brand-gold-light">Contact</a></li>
+				</ul>
+			</div>
+
+			<div class="md:col-span-4">
+				<h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-text">Contact</h3>
+				<div class="mt-5 space-y-3 text-sm text-brand-muted">
+					<p>Latifabad, Hyderabad, Sindh, Pakistan</p>
+					<p><a href="tel:+923332608518" class="transition hover:text-blue-500">Call Us: +92 333 2608518</a></p>
+					<p><a href="https://wa.me/923180038824" class="transition hover:text-green-500">WhatsApp: +92 318 0038824</a></p>
+					<p><a href="mailto:hs@mdenterprises.pk" class="transition hover:text-brand-gold-light">hs@mdenterprises.pk</a></p>
+				</div>
+			</div>
 		</div>
-		<div>
-			<h3 class="text-sm font-semibold uppercase tracking-[0.08em] text-brand-white">Quick Links</h3>
-			<ul class="mt-3 space-y-2 text-sm text-brand-light">
-				<li><a href="/about" class="hover:text-brand-gold">About</a></li>
-				<li><a href="/services" class="hover:text-brand-gold">Services</a></li>
-				<li><a href="/projects" class="hover:text-brand-gold">Projects</a></li>
-				<li><a href="/contact" class="hover:text-brand-gold">Contact</a></li>
-			</ul>
+
+		<div class="gold-gradient-line mt-14"></div>
+		<div class="mt-6 flex flex-col gap-3 text-xs text-brand-muted sm:flex-row sm:items-center sm:justify-between">
+			<p>&copy; {new Date().getFullYear()} MD Enterprises. All rights reserved.</p>
+			<p class="uppercase tracking-[0.12em]">Building Trust, Creating Value</p>
 		</div>
-		<div>
-			<h3 class="text-sm font-semibold uppercase tracking-[0.08em] text-brand-white">Contact</h3>
-			<p class="mt-3 text-sm text-brand-light">Latifabad, Hyderabad, Sindh 71000</p>
-			<p class="mt-2 text-sm text-brand-light">+92 300 1234567</p>
-			<p class="mt-2 text-sm text-brand-light">info@mdenterprises.pk</p>
-		</div>
-	</div>
-	<div class="border-t border-brand-slate py-4 text-center text-xs text-brand-light">
-		&copy; {new Date().getFullYear()} MD Enterprises. All rights reserved.
 	</div>
 </footer>

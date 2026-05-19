@@ -3,26 +3,29 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import ProjectsGallery from '../components/ProjectsGallery.astro';
 import CtaBanner from '../components/CtaBanner.astro';
+import SectionHeader from '../components/SectionHeader.astro';
 ---
 
 <Layout
 	title="Projects | MD Enterprises"
-	description="Review selected planning and consultancy projects completed by MD Enterprises."
+	description="Review luxury developments and metropolitan projects delivered by MD Enterprises."
 	path="/projects"
 >
 	<PageHero
-		title="Project Showcase"
-		description="A curated look at residential, commercial, and mixed-use assignments delivered with precision planning and engineering foresight."
+		title="A portfolio of urban landmarks"
+		accentWord="landmarks"
+		description="A curated look at residential, commercial, and mixed-use assignments delivered with precision planning and architectural foresight."
+		image="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=2400&q=80"
 	/>
 	<ProjectsGallery />
-	<section class="pb-16 sm:pb-20">
+	<section class="border-t border-brand-border bg-brand-elevated py-16">
 		<div class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
-			<div class="border border-brand-slate bg-brand-slate/30 p-8 shadow-lg shadow-black/20">
-				<h2 class="text-2xl font-bold text-brand-white">Execution Approach</h2>
-				<p class="mt-4 text-sm leading-7 text-brand-light">
-					Each assignment follows a disciplined lifecycle: site diagnostics, conceptual options, stakeholder validation, compliance readiness, and implementation guidance. This helps clients move from strategy to execution with fewer surprises and stronger project control.
-				</p>
-			</div>
+			<SectionHeader
+				label="Execution"
+				title="Disciplined delivery at every stage"
+				accentWord="stage"
+				description="Each assignment follows a structured lifecycle: site diagnostics, conceptual options, stakeholder validation, compliance readiness, and implementation guidance."
+			/>
 		</div>
 	</section>
 	<CtaBanner />
